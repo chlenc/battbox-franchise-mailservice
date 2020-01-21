@@ -37,7 +37,13 @@ def token_required(f):
     return decorated
 
 
-@app.route('/email', methods=['POST', 'GET'])
+@app.route('/')
+@app.route('/status')
+def status():
+    return 'email service works correct ✅'
+
+
+@app.route('/email', methods=['POST'])
 @token_required
 def email():
     req = {}
