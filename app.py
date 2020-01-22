@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import os
 from flask_mail import Mail, Message
 from functools import wraps
-# from flask_cors import CORS
+from flask_cors import CORS
 load_dotenv()
 
 MAIL = os.getenv("MAIL")
@@ -11,7 +11,7 @@ MAIL_PASS = os.getenv("MAIL_PASS")
 SECURE_KEY = os.getenv("SECURE_KEY")
 
 app = Flask(__name__)
-# CORS(app)
+CORS(app)
 
 mail_settings = {
     "MAIL_SERVER": 'smtp.yandex.ru',
